@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+motor
+pydantic
+pymongo
+transformers
+torch
+tensorflow
+numpy==1.25.2
+scipy
+keras==2.14

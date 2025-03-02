@@ -1,0 +1,107 @@
+Introduction
+
+The AI Receptionist is an intelligent assistant designed to manage customer interactions, appointments, and business inquiries using AI-powered responses. This document provides step-by-step instructions for setting up, running, and testing the application.
+
+Prerequisites
+
+Before setting up the AI Receptionist, ensure you have the following installed:
+
+Python (>= 3.10)
+
+MongoDB (for database storage)
+
+FastAPI (for backend API)
+
+Virtual Environment (venv)
+
+🔧 Setup Guide
+
+1️⃣ Clone the Repository
+
+git clone https://github.com/your-repo/ai-receptionist.git
+cd ai-receptionist
+
+2️⃣ Create a Virtual Environment & Activate It
+
+python -m venv venv  # Create a virtual environment
+
+# Activate on Windows
+venv\Scripts\activate
+
+# Activate on macOS/Linux
+source venv/bin/activate
+
+If you get a PowerShell execution policy error, run:
+
+Set-ExecutionPolicy Unrestricted -Scope Process
+
+3️⃣ Install Dependencies
+
+pip install -r requirements.txt
+
+4️⃣ Set Up Environment Variables
+
+Create a .env file in the root directory and configure:
+
+
+🚀 Running the Application
+
+1️⃣ Start MongoDB
+
+Ensure MongoDB is running locally:
+
+mongod --dbpath /path/to/mongodb/data
+
+2️⃣ Run the FastAPI Backend
+
+uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+
+Open API documentation at: http://127.0.0.1:8000/docs
+
+
+✅ Testing the Application
+
+1️⃣ Test API Endpoints with Postman
+
+Check Server Status
+
+http://127.0.0.1:8000/docs#/AI%20Interaction/ask_ai_ai_ask_ai_post
+
+GET http://127.0.0.1:8000/
+
+Schedule an Appointment
+
+POST http://127.0.0.1:8000/schedule
+
+JSON Body:
+
+{
+  "customer_name": "John Doe",
+  "service": "Laptop Repair",
+  "date": "2025-03-02",
+  "time": "10:30"
+}
+
+Fetch Appointments
+
+GET http://127.0.0.1:8000/appointments
+
+2️⃣ Run Unit Tests
+
+pytest tests/
+
+3️⃣ Debugging & Logs
+
+Check logs in logs/ directory for any errors.
+
+Use print() statements or FastAPI logging for debugging.
+
+🎯 Deployment (Optional)
+
+For production deployment, use Docker or cloud services like AWS, GCP, or Azure.
+
+
+📌 Conclusion
+
+Your AI Receptionist is now set up and running. You can customize it further based on your business needs. Happy coding! 🚀
+
